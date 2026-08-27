@@ -2,46 +2,79 @@
 
   <h1>Trazabilidad de proyectos</h1>
 
+  <!-- TRAZABILIDAD COMPLETA -->
   <div class="campo">
-    <label for="trazabilidad">Trazabilidad completa</label>
+
+    <label for="trazabilidad">
+      Trazabilidad completa
+    </label>
 
     <textarea
       id="trazabilidad"
       [(ngModel)]="trazabilidadCompleta"
-      placeholder="Pegue aquí toda la trazabilidad del To-Do..."></textarea>
+      placeholder="Pegue aquí toda la trazabilidad del To-Do...">
+    </textarea>
+
   </div>
 
+
+  <!-- NOMBRE DEL PROYECTO -->
   <div class="campo">
-    <label for="proyecto">Nombre del proyecto</label>
+
+    <label for="proyecto">
+      Nombre del proyecto
+    </label>
 
     <input
       id="proyecto"
       type="text"
       [(ngModel)]="nombreProyecto"
       placeholder="Ej. GD-INIRCO-1028519284">
+
   </div>
 
+
+  <!-- BOTÓN BUSCAR -->
   <button
     type="button"
     class="btn-buscar"
     (click)="buscarProyecto()">
+
     Generar trazabilidad
+
   </button>
 
 
   <!-- MENSAJE -->
   @if (mensaje) {
+
     <div class="mensaje">
       {{ mensaje }}
     </div>
+
   }
 
 
   <!-- RESULTADO -->
   @if (resultado) {
+
     <div class="resultado">
 
-      <h2>Resultado encontrado</h2>
+      <div class="resultado-header">
+
+        <h2>Resultado encontrado</h2>
+
+        <button
+          type="button"
+          class="btn-excel"
+          (click)="generarExcel()">
+
+          📊 Descargar Excel
+
+        </button>
+
+      </div>
+
 
       <textarea
         class="resultado-texto"
@@ -50,6 +83,7 @@
       </textarea>
 
     </div>
+
   }
 
 </div>
